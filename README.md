@@ -13,27 +13,42 @@ It monitors **process creation and termination**, sending details to a user-mode
 - ✅ Retrieves **process image name, parent process, command line, and session ID**
 - ✅ Sends data to a **user-mode application** via a **named pipe**
 - ✅ Built **for learning and research purposes**
+- ✅ Helps understand **kernel development and EDR mechanisms**
 
 ## Components
 
 - **Kernel Driver** 🖥️: Hooks into process creation and termination events.
 - **User-mode Application** 📡: Reads process activity data from the named pipe.
 
-## Installation & Usage
+## Building the Project 🛠️
 
-1. **Load the kernel driver** using a driver loader.
-2. **Run the user-mode application** to start monitoring.
-3. **Observe process activity** in real-time.
+To build the project yourself, you will need:
 
-## Disclaimer ⚠️
+- **Windows Driver Kit (WDK)**
+- **Visual Studio 2022** with the WDK extension installed
 
-This project is **for educational and research purposes only**.  
-It should **not be used for malicious activities**.
+### Steps:
 
-## License 📜
+1. Open **Visual Studio 2022**.
+2. Load the project and set the **WDK environment**.
+3. Build the **driver (.sys)** and the **user-mode application (.exe)**.
 
-[MIT License](LICENSE)
+Alternatively, you can **download the pre-built binaries** from the **Releases** section.
 
----
+## Running the Driver 🚀
 
+You can load the driver using one of the following methods:
+
+### 1️⃣ OSR Driver Loader (Easier Method)
+1. Download **OSR Driver Loader** from [OSR Online](https://www.osronline.com/).
+2. Select the compiled `.sys` file.
+3. Load the driver and start monitoring process activity.
+
+### 2️⃣ Using `sc.exe` (Built-in Windows Method)
+1. Open **Command Prompt (Administrator)**.
+2. Run the following commands:
+
+```powershell
+sc create MiniEDR type= kernel binPath= C:\Path\To\MiniEDR.sys
+sc start MiniEDR
 ⭐ **Feel free to contribute and explore how EDRs function at a lower level!** ⭐
