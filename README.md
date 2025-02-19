@@ -1,6 +1,6 @@
 # MiniEDR by @j3h4ck
 
-![Project Logo](./MiniEDR.png)
+![Project Logo](./MiniEDR.PNG)
 
 ## Overview
 
