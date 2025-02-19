@@ -49,6 +49,9 @@ You can load the driver using one of the following methods:
 2. Run the following commands:
 
 ```powershell
-sc create MiniEDR type= kernel binPath= C:\Path\To\MiniEDR.sys
+sc create MiniEDR type= kernel binPath= C:\Path\To\Driver.sys
 sc start MiniEDR
-⭐ **Feel free to contribute and explore how EDRs function at a lower level!** ⭐
+Agent.exe
+```
+
+
